@@ -1,0 +1,83 @@
+// Sass variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+@import "active_admin/mixins";
+@import "active_admin/base";
+@import "active_admin_flat_skin";
+@import "font-awesome";
+// Overriding any non-variable Sass must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
+.font-color {
+  color: white;
+  text-decoration: unset;
+}
+
+.a {
+  
+}
+
+#user_email {
+  padding: 20px;
+  border: 2px beige outset;
+  width: 550px;
+}
+
+#password {
+  padding: 20px;
+  border: 2px beige outset;
+  width: 550px;
+}
+
+#user_password {
+  padding: 20px;
+  border: 2px beige outset;
+  width: 550px;
+}
+
+#user_password_confirmation {
+  padding: 20px;
+  border: 2px beige outset;
+  width: 550px;
+}
+
+.text-decoration {
+  text-decoration: unset;
+  color: #38678b;
+}
+
+.form-update {
+  border: 3px outset;
+  background: ghostwhite;
+}
+
+.padding-set {
+  padding: 10px;
+  padding-left: 25px;
+  padding-inline: 35px;
+  scroll-padding: auto;
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
