@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-14 ">
+      <%= month_calendar(attribute: :start_date, events: @events) do |date, events| %>  
+        <div>
+          <%= date.day %> 
+        </div>      
+          <% events.each do |meeting| %>  
+            <% if meeting&.approved == true %>
+              <li><%= meeting&.reason %></li>
+            <% end %>  
+          <% end %>     
+      <% end %>
+    </div>
+  </div>
+</div>
+

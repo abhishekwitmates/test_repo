@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <% if @post.mulitmedia.audio? %>
+    <%= image_tag(@post.image, size: '150x300') if @post.image.attached? %><br>
+    <%= audio_tag(url_for(@post.mulitmedia), controls: true) if @post.mulitmedia.attached? %>
+  <% else %>
+    <%= video_tag(url_for(@post.mulitmedia), size: '1300x600', controls: true) if @post.mulitmedia.attached? && @post.mulitmedia.video? %>
+  <% end %>
+
+</div>
+
+    <%= render 'layouts/footer' %>

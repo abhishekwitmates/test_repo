@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: absolute;width: 100%;z-index: 1;top: 0%;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="color: white; text-decoration: unset;">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" style="color: white; text-decoration: unset;">Home</a>
+        </li>
+        <li class="nav-item">
+          <% if user_signed_in? %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "a nav-link" %>
+          <% else %>
+            <%= link_to 'Sign In', new_user_session_path, class: "nav-link" %>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="color: white; text-decoration: unset;">Disabled</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; text-decoration: unset;">
+              Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="#" style="color: black; text-decoration: unset;">Action</a></li>
+            <li><a class="dropdown-item" href="#" style="color: black; text-decoration: unset;">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" style="color: black; text-decoration: unset;">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" style="padding: 20px;color: white;">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

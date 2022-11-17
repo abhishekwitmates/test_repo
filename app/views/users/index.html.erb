@@ -1,0 +1,17 @@
+<div class="container-fluid overflow-auto" style="padding-top: 50px;">
+  <% @multimedia.each_slice(4) do |multimedia| %>
+    <div class="row padding-set">
+      <% multimedia.each do |product| %>
+        <div class="col-3 card", style="background-color:beige;border: 2px outset;align-items: center;">
+          <%= link_to welcome_path(product.id) do %>
+            <!-- <%= video_tag(url_for(product.mulitmedia), size: '300x200', controls: true, autoplay: true)%> -->
+            <%= image_tag(product.image, size: '300x200') if product.image.attached? %><br>
+            <b><%= product.name %></b>  <b><%= product.duration %></b>
+          <% end %>  
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'layouts/footer' %>

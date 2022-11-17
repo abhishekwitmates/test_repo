@@ -1,0 +1,37 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-8">
+      <strong><i class="fas fa-dragon"><ul>Hello, welcome to Our Kingdom!</ul></i></strong>
+    </div>
+    <div class="col-4">
+      <strong><i class="fas fa-dragon"><ul>Multimedia Section</ul></i></strong><br>
+      <% @multimedia.each do |multimedia| %>
+        <% if multimedia.mulitmedia.video? %>
+          <%= video_tag(url_for(multimedia.mulitmedia), size: '300x200', controls: true, autoplay: true)%>
+        <% else %>
+          <%= audio_tag(url_for(multimedia.mulitmedia), size: '300x200', controls: true)%>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <% @multimedia.each_slice(3) do |multimedia| %>
+    <div class="row">
+      <% multimedia.each do |product| %>
+        <div class="col">
+          <% if product.mulitmedia.video? %>
+            <%= link_to (product.id) do %>
+              <%= image_tag(product.image, size: '300x200') %><br>
+              <b><%= product.name %></b>  <b><%= product.duration %></b>
+            <% end %>  
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+    <%= render 'layouts/footer' %>

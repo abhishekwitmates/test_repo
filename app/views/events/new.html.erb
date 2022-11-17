@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-8">
+      <strong>Leave Application:</strong>
+      <%= form_with model: @event, url: events_path do |f| %>
+        <div class="field">
+          <%= f.label :applicant_name, "Applicant's name", require: true %><br />
+          <p><%= f.text_field :applicant_name, style: 'height: 30px !important', class: "btn btn-btn-info" %></p>
+        </div>
+        <div>
+          <%= f.label :name, 'Reason in Short'%>
+          <p>
+            <%= f.text_field :name, style: 'height: 30px !important' %>
+          </p>
+        </div>
+        <div>
+          <%= f.label :start_date, 'From' %>
+          <p>  
+            <%= f.datetime_field :start_date %>
+          </p>
+        </div>          
+        <div>          
+            <%= f.label :end_date, 'To' %>
+          <p>
+            <strong><%= f.datetime_field :end_date %></strong>
+          </p>
+        </div>
+        <div>
+          <%= f.label :reason, "Reason"%>
+          <p>
+            <%= f.text_area :reason, placeholder: 'Reason for Leave' %>
+          </p>
+        </div> 
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
